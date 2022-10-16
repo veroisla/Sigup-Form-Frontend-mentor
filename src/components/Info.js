@@ -11,12 +11,6 @@ function info() {
         scripted tutorials is great, but understanding how developers think is
         invaluable.
       </p>
-      <div className="info__purpleContainer">
-        <p className="info__free">
-          <span className="info__freeSpan">Try it free 7 days </span>then
-          $20/mo. thereafter
-        </p>
-      </div>
     </section>
   );
 }

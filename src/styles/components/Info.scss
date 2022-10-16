@@ -8,7 +8,7 @@
     color: $--color-white;
 
     &__title {
-       font-size: 30px;
+       font-size: 25px;
        text-align: center;
        margin-bottom: 15px;
     }
@@ -16,30 +16,26 @@
     &__text {
         text-align: center;
         width: 310px;
-        margin-bottom: 40px;
-        line-height: 30px;
+        margin-bottom: 30px;
     }
+}
 
-    //PURPLE CONTAINER
+@media all and (min-width: 768px) {
 
-    &__purpleContainer {
-        background-color: $--color-purple;
-        height: 90px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 10px;
-        box-shadow: 0 10px 10px -2px rgba(0, 0, 0, 0.5);
-        margin-bottom: 20px;
-    }
+    .info {
+        align-items: flex-start;
+        
 
-    &__free {
-        width: 200px;
-        text-align: center;
-    }
+        &__title {
+            width: 600px;
+            font-size: 60px;
+            text-align: start; 
+        }
 
-    &__freeSpan {
-        font-weight: bold;
+        &__text {
+            width: 650px;
+            text-align: start;
+            font-size: 20px;
+        }
     }
 }

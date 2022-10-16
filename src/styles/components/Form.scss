@@ -6,26 +6,25 @@
 
     &__container {
         background-color: $--color-white;
-        // TODO:CAMBIAR HEIGTH FORM
-        height: 300px;
+        height: 430px;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 20px 0 20px 0;
+        padding: 25px;
         justify-content: space-evenly;
         box-shadow: 0 10px 10px -2px rgba(78, 77, 77, 0.5);
         // TODO:BOX-SHADOW REVISAR"!!!
     }
 
     &__input {
-        width: 280px;
+        width: 100%;
         height: 50px;
         border-radius: 5px;
         border: none;
         border: 1px solid $--color-grayish-blue;
-        padding-left: 15px;
         font-weight: 600; 
+        padding-left: 15px;
     }
 
     //BUTTON
@@ -34,7 +33,7 @@
         background-color: $--color-green;
         border: none;
         height: 50px;
-        width: 280px;
+        width: 100%;
         border-radius: 5px;
         color: $--color-white;
         text-transform: uppercase;
@@ -58,5 +57,20 @@
         color: $--color-red;
         font-weight: bold;
         font-size: 12px;
+    }
+}
+
+@media all and (min-width:768px) {
+
+    .form {
+
+        &__container {
+            height: 500px;
+            width: 600px;
+        }
+
+        &__input {
+            padding-left: 25px;
+        }
     }
 }
