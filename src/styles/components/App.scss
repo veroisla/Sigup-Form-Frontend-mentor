@@ -6,8 +6,11 @@
     background-color: $--color-red;
     height: 100vh;
     padding: 80px 30px 50px 30px;
+    display: flex;
+    flex-direction: column;
 
     @media all and (min-width: 768px) {
         background-image: url(../../images/bg-intro-desktop.png);
+        flex-direction: row;
     }
 }
