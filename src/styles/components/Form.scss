@@ -29,6 +29,13 @@
     font-size: 12px;
 
     }
+    //ERROR
+
+    &__error {
+       align-self: flex-end;
+       color: $--color-red;
+       font-size: 12px;
+    }
 
     //BUTTON
 
@@ -74,6 +81,16 @@
 
         &__input {
             padding-left: 25px;
+            font-size: 16px;
         }
+
+          //ERROR
+
+    &__error {
+        align-self: flex-end;
+        color: $--color-red;
+        font-size: 14px;
+     }
+ 
     }
 }

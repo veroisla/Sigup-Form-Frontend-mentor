@@ -28,8 +28,12 @@ function App() {
 
   // GUARDAR VALOR INPUT
 
-  const handleInput = (ev) => {
-    setDataUser(ev.target.value);
+  const handleInput = (inputValue, inputChanged) => {
+    const newData = {
+      ...dataUser,
+      [inputChanged]: inputValue,
+    };
+    setDataUser(newData);
   };
 
   //FUNCION QUE LLAMA A VALOR INPUT Y A VALIDACION
@@ -44,10 +48,43 @@ function App() {
   const validateForm = (dataUser) => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    //email debe incluir @ y un .
+    let regexEmail = /\S+@\S+\.\S+/;
+    let regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$/;
 
     if (dataUser.name === '') {
-      errors.name = 'Can´t be blank';
-    } else if (!regexName.test(dataUser.name)) return errors;
+      errors.name = 'First Name cannot be empty';
+    } else if (!regexName.test(dataUser.name)) {
+      errors.name = 'invalid format';
+    } else if (errors.name !== '') {
+      errors.name = '';
+    }
+
+    if (dataUser.lastName === '') {
+      errors.lastName = 'Last Name  cannot be empty';
+    } else if (!regexName.test(dataUser.lastName)) {
+      errors.lastName = 'Invalid format';
+    } else if (errors.lastName !== '') {
+      errors.lastName = '';
+    }
+
+    if (dataUser.email === '') {
+      errors.email = 'Looks like this is not an email';
+    } else if (!regexEmail.test(dataUser.email)) {
+      errors.email = 'Invalid format';
+    } else if (errors.email !== '') {
+      errors.email = '';
+    }
+
+    if (dataUser.password === '') {
+      errors.password = 'Password cannot be empty';
+    } else if (!regexPassword.test(dataUser.password)) {
+      errors.password = 'Must have a number, uppercase and lowercase letter';
+    } else if (errors.password !== '') {
+      errors.password = '';
+    }
+
+    return errors;
   };
 
   return (
@@ -56,6 +93,7 @@ function App() {
         <Info />
         <div className="container">
           <PurpleContainer />
+
           <Form
             handleInput={handleInput}
             handleSubmit={handleSubmit}

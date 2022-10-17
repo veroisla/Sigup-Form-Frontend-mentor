@@ -4,8 +4,8 @@ import '../styles/components/Form.scss';
 function Form(props) {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
-    const inputChange = ev.target.name;
-    props.handleInput(inputValue, inputChange);
+    const inputChanged = ev.target.name;
+    props.handleInput(inputValue, inputChanged);
   };
   return (
     <section className="form">
@@ -23,7 +23,6 @@ function Form(props) {
           id="name"
           placeholder="First Name"
           onChange={handleInput}
-          value={props.dataUser.name}
         />
         {props.errors.name && (
           <p className="form__error">{props.errors.name}</p>
@@ -34,21 +33,33 @@ function Form(props) {
           name="lastName"
           id="lastName"
           placeholder="Last Name"
+          onChange={handleInput}
         />
+        {props.errors.lastName && (
+          <p className="form__error">{props.errors.lastName}</p>
+        )}
         <input
           className="form__input"
           type="email"
           name="email"
           id="email"
           placeholder="Email Address"
+          onChange={handleInput}
         />
+        {props.errors.email && (
+          <p className="form__error">{props.errors.email}</p>
+        )}
         <input
           className="form__input"
           type="password"
           name="password"
           id="password"
           placeholder="Password"
+          onChange={handleInput}
         />
+        {props.errors.password && (
+          <p className="form__error">{props.errors.password}</p>
+        )}
         <button
           className="form__submitBtn"
           type="submit"
