@@ -75,13 +75,13 @@
     .form {
 
         &__container {
-            height: 500px;
-            width: 600px;
+            height: 450px;
+            width: 450px;
         }
 
         &__input {
             padding-left: 25px;
-            font-size: 16px;
+            font-size: 14px;
         }
 
           //ERROR
@@ -89,6 +89,29 @@
     &__error {
         align-self: flex-end;
         color: $--color-red;
+        font-size: 12px;
+     }
+ 
+    }
+}
+
+
+@media all and (min-width:1200px) {
+
+    .form {
+
+        &__container {
+            height: 500px;
+            width: 600px;
+        }
+
+        &__input {
+            font-size: 16px;
+        }
+
+          //ERROR
+
+    &__error {
         font-size: 14px;
      }
  

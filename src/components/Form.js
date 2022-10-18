@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/components/Form.scss';
+import SubmitBtn from './SubmitBtn';
 
 function Form(props) {
   const handleInput = (ev) => {
@@ -60,13 +61,9 @@ function Form(props) {
         {props.errors.password && (
           <p className="form__error">{props.errors.password}</p>
         )}
-        <button
-          className="form__submitBtn"
-          type="submit"
-          onClick={props.handleForm}
-        >
-          claim your free trial
-        </button>
+
+        <SubmitBtn handleForm={props.handleForm} />
+
         <p className="form__termsContainer">
           <small className="form__terms">
             By clicking the button, you are agreeing to our{' '}
