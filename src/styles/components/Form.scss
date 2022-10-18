@@ -23,11 +23,11 @@
     height: 40px;
     border-radius: 5px;
     border: none;
-    border: 1px solid #b9b6d3;
     font-weight: 600;
     padding-left: 15px;
     padding-right: 10px;
     font-size: 12px;
+    border: 1px solid #b9b6d3;
 
     &:focus {
         outline: none;
@@ -38,7 +38,7 @@
  
     //ERROR
 
-    &__error {
+    &__errorText {
        align-self: flex-end;
        color: $--color-red;
        font-size: 12px;
@@ -61,22 +61,25 @@
         color: $--color-red;
         font-weight: bold;
         font-size: 12px;
-    }
-}
+    }  
+    
+    //ERROR ACTIVE ICON AND RED BORDER
 
-   //ERROR ACTIVE
-
-   .error::placeholder {
-    display: flex;
+  &__inputError {    
     background-image: url(../../images/icon-error.svg);
     background-repeat: no-repeat;
-    background-position: right center; 
-    padding: 30px 30px 30px 0px;    
-   }
-
-   .error {
+    background-position: right 0.5rem  center; 
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    padding-left: 15px;
+    font-size: 12px;
     border: 1px solid $--color-red;
    }
+  
+}
 
 
 @media all and (min-width:768px) {
@@ -95,10 +98,14 @@
 
           //ERROR
 
-    &__error {
+    &__errorText {
         align-self: flex-end;
         color: $--color-red;
-        font-size: 12px;
+        font-size: 14px;
+     }
+
+     &__inputError {
+        font-size: 14px;
      }
  
     }
@@ -120,7 +127,7 @@
 
           //ERROR
 
-    &__error {
+    &__errorText {
         font-size: 14px;
      }
  

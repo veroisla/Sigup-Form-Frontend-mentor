@@ -58,7 +58,7 @@ function App() {
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     //email debe incluir @ y un .
     let regexEmail = /\S+@\S+\.\S+/;
-    let regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$/;
+    let regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,40}$/;
 
     if (dataUser.name === '') {
       errors.name = 'First Name cannot be empty';
@@ -114,6 +114,7 @@ function App() {
                 dataUser={dataUser}
                 errors={errors}
                 handleForm={handleForm}
+                completeForm={completeForm}
               />
             </div>
           </>

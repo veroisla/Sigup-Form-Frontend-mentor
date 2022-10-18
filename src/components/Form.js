@@ -18,7 +18,11 @@ function Form(props) {
         onSubmit={props.handleSubmit}
       >
         <input
-          className="form__input error"
+          className={
+            props.errors.name !== '' && props.completeForm.name === false
+              ? 'form__inputError'
+              : 'form__input'
+          }
           type="text"
           name="name"
           id="name"
@@ -26,21 +30,31 @@ function Form(props) {
           onChange={handleInput}
         />
         {props.errors.name && (
-          <p className="form__error">{props.errors.name}</p>
+          <p className="form__errorText">{props.errors.name}</p>
         )}
         <input
-          className="form__input error"
+          className={
+            props.errors.lastName !== '' &&
+            props.completeForm.lastName === false
+              ? 'form__inputError'
+              : 'form__input'
+          }
           type="text"
           name="lastName"
           id="lastName"
           placeholder="Last Name"
           onChange={handleInput}
         />
+
         {props.errors.lastName && (
-          <p className="form__error">{props.errors.lastName}</p>
+          <p className="form__errorText">{props.errors.lastName}</p>
         )}
         <input
-          className="form__input error"
+          className={
+            props.errors.email !== '' && props.completeForm.email === false
+              ? 'form__inputError'
+              : 'form__input'
+          }
           type="email"
           name="email"
           id="email"
@@ -48,10 +62,15 @@ function Form(props) {
           onChange={handleInput}
         />
         {props.errors.email && (
-          <p className="form__error">{props.errors.email}</p>
+          <p className="form__errorText">{props.errors.email}</p>
         )}
         <input
-          className="form__input error"
+          className={
+            props.errors.password !== '' &&
+            props.completeForm.password === false
+              ? 'form__inputError'
+              : 'form__input'
+          }
           type="password"
           name="password"
           id="password"
@@ -59,7 +78,7 @@ function Form(props) {
           onChange={handleInput}
         />
         {props.errors.password && (
-          <p className="form__error">{props.errors.password}</p>
+          <p className="form__errorText">{props.errors.password}</p>
         )}
 
         <SubmitBtn handleForm={props.handleForm} />

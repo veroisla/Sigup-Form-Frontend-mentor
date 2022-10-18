@@ -12,6 +12,9 @@
         color: $--color-white;
         text-transform: uppercase;
         box-shadow: 0 7px 10px -2px $--color-green;
-    
+        transition: background-color 1s;
 
+        &:hover {
+                background-color: $--color-light-green;
+        }
 }
