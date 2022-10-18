@@ -37,19 +37,6 @@
        font-size: 12px;
     }
 
-    //BUTTON
-
-    &__submitBtn {
-        background-color: $--color-green;
-        border: none;
-        height: 50px;
-        width: 100%;
-        border-radius: 5px;
-        color: $--color-white;
-        text-transform: uppercase;
-        box-shadow: 0 7px 10px -2px $--color-green;
-    }
-
     //TERMS
 
     &__termsContainer {

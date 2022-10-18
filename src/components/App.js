@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Info from '../components/Info';
 import PurpleContainer from '../components/PurpleContainer';
 import Form from '../components/Form';
+import CompleteSection from '../components/CompleteSection';
 import '../styles/components/App.scss';
 
 function App() {
@@ -19,6 +20,13 @@ function App() {
     lastName: '',
     email: '',
     password: '',
+  });
+
+  const [completeForm, setCompleteForm] = useState({
+    name: false,
+    lastName: false,
+    email: false,
+    password: false,
   });
 
   //FUNCIÓN PREVENIR ENVÍO POR DEFECTO
@@ -57,7 +65,7 @@ function App() {
     } else if (!regexName.test(dataUser.name)) {
       errors.name = 'invalid format';
     } else if (errors.name !== '') {
-      errors.name = '';
+      completeForm.name = true;
     }
 
     if (dataUser.lastName === '') {
@@ -65,7 +73,7 @@ function App() {
     } else if (!regexName.test(dataUser.lastName)) {
       errors.lastName = 'Invalid format';
     } else if (errors.lastName !== '') {
-      errors.lastName = '';
+      completeForm.lastName = true;
     }
 
     if (dataUser.email === '') {
@@ -73,35 +81,43 @@ function App() {
     } else if (!regexEmail.test(dataUser.email)) {
       errors.email = 'Invalid format';
     } else if (errors.email !== '') {
-      errors.email = '';
+      completeForm.email = true;
     }
 
     if (dataUser.password === '') {
       errors.password = 'Password cannot be empty';
     } else if (!regexPassword.test(dataUser.password)) {
-      errors.password = 'Must have a number, uppercase and lowercase letter';
+      errors.password =
+        'Must have a number, uppercase and lowercase letter and minimum of 8 letters';
     } else if (errors.password !== '') {
-      errors.password = '';
+      completeForm.password = true;
     }
-
     return errors;
   };
 
   return (
     <>
       <div className="body">
-        <Info />
-        <div className="container">
-          <PurpleContainer />
-
-          <Form
-            handleInput={handleInput}
-            handleSubmit={handleSubmit}
-            dataUser={dataUser}
-            errors={errors}
-            handleForm={handleForm}
-          />
-        </div>
+        {completeForm.name === true &&
+        completeForm.lastName === true &&
+        completeForm.email === true &&
+        completeForm.password === true ? (
+          <CompleteSection />
+        ) : (
+          <>
+            <Info />
+            <div className="container">
+              <PurpleContainer />
+              <Form
+                handleInput={handleInput}
+                handleSubmit={handleSubmit}
+                dataUser={dataUser}
+                errors={errors}
+                handleForm={handleForm}
+              />
+            </div>
+          </>
+        )}
       </div>
     </>
   );

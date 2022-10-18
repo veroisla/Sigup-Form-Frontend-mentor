@@ -1,0 +1,31 @@
+@import "../Vars.scss";
+@import "../Reset.scss";
+
+.complete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: $--color-white;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+   
+     
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+        line-height: 40px;
+    }
+
+    &__subtitle {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    &__email {
+        font-size: 60px;
+        color: $--color-purple;
+    }
+}
