@@ -18,7 +18,7 @@ function Form(props) {
         onSubmit={props.handleSubmit}
       >
         <input
-          className="form__input"
+          className="form__input error"
           type="text"
           name="name"
           id="name"
@@ -29,7 +29,7 @@ function Form(props) {
           <p className="form__error">{props.errors.name}</p>
         )}
         <input
-          className="form__input"
+          className="form__input error"
           type="text"
           name="lastName"
           id="lastName"
@@ -40,7 +40,7 @@ function Form(props) {
           <p className="form__error">{props.errors.lastName}</p>
         )}
         <input
-          className="form__input"
+          className="form__input error"
           type="email"
           name="email"
           id="email"
@@ -51,7 +51,7 @@ function Form(props) {
           <p className="form__error">{props.errors.email}</p>
         )}
         <input
-          className="form__input"
+          className="form__input error"
           type="password"
           name="password"
           id="password"
