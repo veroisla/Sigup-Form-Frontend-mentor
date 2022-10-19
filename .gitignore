@@ -24,4 +24,7 @@ yarn-error.log*
 
 #docs
 
-/styles
+# /styles
+/.gitignore
+/package-lock.json
+package.json
